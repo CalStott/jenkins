@@ -25,7 +25,7 @@ A comprehensive guide to setting up Jenkins CI integration with GitHub.
    - Paste the **SSH clone link** from GitHub.  
    ![Adding Credentials](./images/adding_credentials.png)
 
-   - Click **Add** next to credentials:
+   - Click **Add** underneath credentials:
      - **Domain**: Global  
      - **Kind**: SSH Username with private key  
        - **Scope**: Global  

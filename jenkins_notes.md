@@ -1,5 +1,7 @@
 # Jenkins
 
+![CI/CD Overview](./images/CICD_pipeline_overview.png)
+
 ### ✅ **Pros of Jenkins**
 
 **1. Open Source & Free**

@@ -2,6 +2,8 @@
 
 A comprehensive guide to setting up Jenkins CI integration with GitHub.
 
+![CI/CD Overview](./images/CICD_pipeline_overview.png)
+
 ---
 
 ## 🔗 Jenkins to GitHub Link

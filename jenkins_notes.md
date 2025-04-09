@@ -86,7 +86,7 @@
 
 * **Purpose**: Deploy to a test, staging, or production environment.
 
-### 📊 **6. Monitor (New Stage)**
+### 📊 **6. Monitor**
 
 * **Purpose**:Verify that the deployed application is up, healthy, and behaving as expected. This might include:
   

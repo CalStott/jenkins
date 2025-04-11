@@ -54,8 +54,10 @@ This guide walks you through the process of creating a Continuous Deployment (CD
   - Paste the following commands:
 
     ```bash
+    # This command copies the new code into the app instance
     rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@instance-ip:/home/ubuntu
 
+    # This command contains all of the commands that will run after accessing the app instance via SSH
     ssh -o "StrictHostKeyChecking=no" ubuntu@instance-ip <<EOF
       cd app
       npm install

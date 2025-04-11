@@ -89,3 +89,7 @@ To trigger the CDE job upon successful merge:
 
 ---
 
+## 8. View your Changes!
+
+Make a change to the `dev` branch, push the change, and watch it happen automatically on the app!
+![App CDE](./images/server-guide/app-CDE-showing.png)

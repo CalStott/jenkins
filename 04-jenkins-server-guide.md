@@ -42,13 +42,16 @@ Click [here](https://github.com/CalStott/VPCs) for instructions
 2. **Install Jenkins**  
    Run these commands:
    ```bash
+   # Get GPG key from URL and save to file to verify installs
    sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 
+   # Register the Jenkins APT repository securely for installation
    echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
    /etc/apt/sources.list.d/jenkins.list > /dev/null
 
+   # Update packages and install Jenkins
    sudo apt-get update
    sudo apt-get install jenkins -y
    ```

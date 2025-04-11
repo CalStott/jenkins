@@ -6,7 +6,7 @@ A comprehensive guide to setting up Jenkins CI integration with GitHub.
 
 ---
 
-## 🔗 Jenkins to GitHub Link
+## 🔗 Creating a CI Test Job
 
 1. Click **New Item** in the left-side navigation bar.  
 2. Enter a **Name** (e.g. `caleb-job-ci-test`).  
@@ -26,6 +26,9 @@ A comprehensive guide to setting up Jenkins CI integration with GitHub.
    - Select **Git**.  
    - Paste the **SSH clone link** from GitHub.  
    ![Adding Credentials](./images/ci-guide/adding_credentials.png)
+
+   - Create an **SSH Key Pair**
+     - Add the **public key** to your GitHub Repo following these [steps](#-adding-ssh-key-to-github)
 
    - Click **Add** underneath credentials:
      - **Domain**: Global  
@@ -50,6 +53,8 @@ A comprehensive guide to setting up Jenkins CI integration with GitHub.
    - Tick **GitHub hook trigger for GITScm polling**  
    ![Build Trigger](./images/ci-guide/build_trigger_webhook.png)
 
+   - Setup the Webhook on GitHub following these [steps](#-setting-up-github-webhook)
+
 9. Under **Build Environment**:  
    - Tick **Provide Node & npm bin/folder to PATH**  
    - Select **NodeJS Version 20**  
@@ -69,6 +74,35 @@ A comprehensive guide to setting up Jenkins CI integration with GitHub.
 > **Note:** To run the job manually, click **Build Now** in the left navigation bar.  
 > To view logs, open the dropdown for the build and click **Console Output**.  
 ![Viewing Output](./images/ci-guide/viewing_console.png)
+
+---
+
+## Creating a CI Merge Job
+
+1. Click **New Item** in the left-side navigation bar.  
+2. Enter a **Name** (e.g. `caleb-job-ci- merge-test`).
+3. Select **Copy from**
+   1. Select your CI test job
+4. Change the **Description** - explain what this job is doing
+5. Under **Build Triggers**
+   1. Untick the GitHub hook trigger for GITScm polling
+6. Under **Build Steps**
+   1. Delete the **Execute Shell** from the previous job
+7. Under **Post-build Actions**
+   1. Select **Git Publisher** from the dropdown
+      1. Tick **Push Only if Build Succeeds**
+      2. Tick **Merge Results**
+      3. **Branches** > **Add Branch**
+         1. **Branch to push** - main
+         2. **Target remote name** - origin
+8. Save
+9. Go to your **CI Test Job** from the Dashboard
+   1.  Under **Post-build Actions**
+       1.  Select **Build other projects**
+           1.  Type your **CI Merge Job** into the box and remove the colon and whitespace after it
+           2.  Make sure **Trigger only if build is stable** is ticked
+   2.  Save
+10. Make a change to your dev branch, and when it is saved, added, committed and pushed to dev the jobs will trigger
 
 ---
 

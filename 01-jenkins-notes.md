@@ -90,7 +90,7 @@
 
 ### 📊 **6. Monitor**
 
-* **Purpose**:Verify that the deployed application is up, healthy, and behaving as expected. This might include:
+* **Purpose**: Verify that the deployed application is up, healthy, and behaving as expected. This might include:
   
 
 * Health checks (e.g. hitting `/health` endpoint)
